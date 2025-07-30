@@ -1,26 +1,114 @@
 *{
-    margin: 0%;
-    padding: 0%;
+    margin: 0px;
+    padding: 0px;
 }
+
+:root {
+  --bg-color: #f3f8fc;
+  --nav-color: #e4eef7;
+  --sidebar-color: #d7e3f3;
+  --primary: #4a90e2;
+  --secondary: #6cb2eb;
+  --text-color: #1f2933;
+}
+
+[data-theme="dark"] {
+  --bg-color: #0f172a;
+  --nav-color: #1e293b;
+  --sidebar-color: #243249;
+  --primary: #3b82f6;
+  --secondary: #60a5fa;
+  --text-color: #e2e8f0;
+}
+
 
 body{
-    background-color: black;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    display: flex;
 }
 
-a{
-    text-decoration: none;
-    color: white;
-    font-family:Geneva, Verdana, sans-serif;
-    font-size: larger;
-    padding: 5px;
-    transition: 300ms;
+.sidebar{
+    width: 30px;
+    height: 100vh;
+    background-color: var(--sidebar-color);
+    position:absolute;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    align-items: center;
+    transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    overflow: hidden;
 }
 
-a:hover{
-    color: rgb(0, 76, 255);
-    transition: none;
+.sidebar span{
+    display: none;
+    margin-left: 3px;
+    
 }
 
-a:active{
-    color: rgb(0, 157, 255);
+.sidebar.expand span{
+    display: inline;
+    position: relative;
 }
+
+.sidebar div{
+    display: flex;
+    align-items: center;   /* vertically center */
+    gap: 8px;    
+}
+
+.sidebar.expand div{
+    margin-left: 3px;
+}
+
+.sidebar.expand{
+    width: 100px;
+    align-items: start;
+    animation: expandSidebar 0.35s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+@keyframes expandSidebar {
+  0% { width: 50px; }
+  80% { width: 230px; } 
+  100% { width: 220px; } 
+}
+
+.text{
+    animation: text-showup 0.35s forwards;
+}
+
+@keyframes text-showup{
+    0%{
+        opacity:0;
+    }
+
+    50%{
+        opacity:100%;
+    }
+}
+
+#toggle-arrow{
+    background-color: transparent;
+    border: none;
+    padding-top: 5px;
+    transition: transform 0.25s cubic-bezier(0.4,0,0.2,1) ;
+}
+
+.expand #toggle-arrow{
+    align-self:flex-end;
+}
+
+.flip{
+    transform: rotate(-180deg);
+}
+
+#main{
+    margin-left: 30px;
+    transition: margin-left 0.3s cubic-bezier(0.4, 0, 0.2, 1) ;
+}
+
+.sidebar.expand ~ #main {
+    margin-left: 220px;
+}
+
