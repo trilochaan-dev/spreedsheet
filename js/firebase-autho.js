@@ -13,3 +13,5 @@ const auth = firebase.auth();
         alert("Error: " + error.message);
       });
   }
+
+window.signInWithGoogle = signInWithGoogle;
