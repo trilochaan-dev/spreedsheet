@@ -1,13 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-  <link rel="stylesheet" href="css/style.css" />
-  <link rel="stylesheet" href="css/spreadsheet.css" />
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/spreadsheet.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
 
   <!-- Firebase CDN (compat) SDKs -->
   <script src="https://www.gstatic.com/firebasejs/10.5.0/firebase-app-compat.js"></script>
@@ -46,51 +44,42 @@
   </script>
 </head>
 <body>
-  <div class="sidebar" id="sidebar">
-    <button id="toggle-arrow" class="toggle on" onclick="sidebar()">
-      <img src="res/arrow.svg" alt="" />
-    </button>
-    <div>
-      <img src="res/house.svg" alt="" />
-      <span class="dd-text">home</span>
-      <span class="text">Home</span>
-    </div>
-    <div>
-      <img src="res/customers.svg" alt="" />
-      <span class="dd-text">customer</span>
-      <span class="text">customer</span>
-    </div>
-    <div> 
-      <img src="res/timeline.svg" alt="" />
-      <span class="dd-text">timeline</span>
-      <span class="text">timeline</span>
-    </div>
-    <div>
-      <button onclick="signInWithGoogle()">Sign in with Google</button>
-    </div>
-  </div>
-  <div id="main">
-    <table id="sheet">
-      <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td></td>
-        <td><input type="text" /></td>
-        <td><input type="text" /></td>
-      </tr>
-      <tr>
-        <td></td>
-        <td><input type="text" /></td>
-        <td><input type="text" /></td>
-      </tr>
-    </table>
-  </div>
+    <div class="sidebar" id="sidebar">
 
-  <script src="js/script.js"></script>
-  <script src="js/table.js"></script>
-  <!-- Removed firebase-autho.js because auth code is inline now -->
+        <button id="toggle-arrow" class="toggle on" onclick="sidebar()"><img src="../res/arrow.svg" alt=""></button>
+        <div>
+        <img src="../res/house.svg" alt="">
+        <span class="text">Home</span>
+        </div>
+        <div>
+        <img src="../res/customers.svg" alt="">
+        <span class="text">customer</span>
+        </div>
+        <div>
+        <img src="../res/timeline.svg" alt="">
+        <span class="text">timeline</span>
+        </div>
+    
+    </div> 
+    <div id="main">
+        <table class="sheet">
+            <tr>
+                <td><input type="text"></td>
+                <td><input type="text"></td>
+                <td><input type="text"></td>
+            </tr>
+            <tr>
+                <td><input type="text"></td>
+                <td><input type="text"></td>
+                <td><input type="text"></td>
+            </tr>
+            <tr>
+                <td><input type="text"></td>
+                <td><input type="text"></td>
+                <td><input type="text"></td>
+            </tr>
+        </table>
+    </div>
 </body>
+    <script src="../js/script.js"></script>
 </html>
