@@ -120,7 +120,13 @@ body{
     background-color: transparent;
     border: none;
     padding-top: 5px;
+    width: 30px;
     transition: transform 0.25s cubic-bezier(0.4,0,0.2,1) ;
+    border-radius: 10px;
+}
+
+#toggle-arrow:hover{
+    background-color: var(--secondary)
 }
 
 .expand #toggle-arrow{
