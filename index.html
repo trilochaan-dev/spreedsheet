@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/spreadsheet.css">
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
 
 </head>
@@ -15,21 +16,25 @@
         <div>
         <img src="res/house.svg" alt="">
         <span class="text">Home</span>
+        <span class="dd-text">Home</span>
         </div>
         <div>
         <img src="res/customers.svg" alt="">
-        <span class="text">customer</span>
+        <span class="text">Customer</span>
+        <span class="dd-text">customers</span>
         </div>
         <div>
         <img src="res/timeline.svg" alt="">
-        <span class="text">timeline</span>
+        <span class="text">Timeline</span>
+        <span class="dd-text">Timeline</span>
         </div>
     
     </div> 
     <div id="main">
-        <table class="sheet">
+        <table id="sheet"> 
+
             <tr>
-                <td><input type="text"></td>
+                <td></td>
                 <td><input type="text"></td>
                 <td><input type="text"></td>
             </tr>
@@ -44,7 +49,33 @@
                 <td><input type="text"></td>
             </tr>
         </table>
+
+        <div id="dd-menu" class="dd-menu">
+            <button onclick="cut()">cut</button>
+            <button onclick="copy()">copy</button>
+            <button onclick="">paste</button>
+            <div  class="submenu-div">
+                <button onclick="">add row  ></button>
+                <div  class="submenu">
+                    <button onclick="">to left</button>
+                    <button onclick="">to right</button>
+                </div>
+            </div>
+            <div  class="submenu-div">
+                <button onclick="">add column  ></button>
+                <div  class="submenu">
+                    <button onclick="">to top</button>
+                    <button onclick="">to bottom</button>
+                </div>
+            </div>
+        </div>
+
     </div>
+
+    
+   
 </body>
     <script src="js/script.js"></script>
+    <script src="js/table.js"></script>
+    <script src="js/tools.js"></script>
 </html>

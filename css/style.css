@@ -9,6 +9,7 @@
   --sidebar-color: #d7e3f3;
   --primary: #4a90e2;
   --secondary: #6cb2eb;
+  --tertiary:rgb(229, 241, 255);
   --text-color: #1f2933;
 }
 
@@ -38,24 +39,51 @@ body{
     gap: 5px;
     align-items: center;
     transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    overflow: hidden;
 }
 
-.sidebar span{
+.sidebar .text{
     display: none;
     margin-left: 3px;
     
 }
 
-.sidebar.expand span{
+.sidebar.expand .text{
     display: inline;
     position: relative;
 }
 
+.dd-text{
+    display: none;
+    position: absolute;
+    left: 100%;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 4px 10px;
+    background-color: var(--secondary);
+    color: var(--text-color);
+    white-space: nowrap;
+    z-index: 1000;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.sidebar div:hover .dd-text{
+    display:block ;
+}
+
 .sidebar div{
     display: flex;
-    align-items: center;   /* vertically center */
-    gap: 8px;    
+    align-items: center;
+    gap: 8px;  
+    position: relative;  
+}
+
+.sidebar div img{
+    position: relative ;
+}
+
+.sidebar div:hover img{
+    position: sticky;
 }
 
 .sidebar.expand div{
@@ -106,6 +134,7 @@ body{
 #main{
     margin-left: 30px;
     transition: margin-left 0.3s cubic-bezier(0.4, 0, 0.2, 1) ;
+    position: relative;
 }
 
 .sidebar.expand ~ #main {
